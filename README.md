@@ -38,7 +38,7 @@ The `MailGunEmailSettings.json` would contain the settings for Mailgun configura
  	  {
    	    "ApiKey": "<Mailgun's API Key>",
    	    "BaseUri": "<Mailgun's API Base URI>",
-    	    "RequestUri": "messages",
+	    "RequestUri": "messages",
    	    "From": "<Non-Reply <someone@somewhere.com>>"
  	  }
 
