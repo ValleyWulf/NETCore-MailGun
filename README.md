@@ -10,6 +10,8 @@ Clone directory:
 	> git clone https://github.com/ValleyWulf/NETCore-MailGun.git
 	> cd NETCore-MailGun
 	> dotnet restore
+	> dotnet build
+	> dotnet ef database update
 
 ## Set Up
 Before running the code, you would need to supply it with a valid configuration.
