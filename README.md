@@ -10,8 +10,6 @@ Clone directory:
 	> git clone https://github.com/ValleyWulf/NETCore-MailGun.git
 	> cd NETCore-MailGun
 	> dotnet restore
-	> dotnet build
-	> dotnet ef database update
 
 ## Set Up
 Before running the code, you would need to supply it with a valid configuration.
@@ -55,6 +53,10 @@ By default, the web application uses the configuration for api.  You can change 
 	    "ConnectionType": "api"
 	},
 
+Once the configuration is set up, compile the code and complete database set up:
+
+	> dotnet build
+	> dotnet ef database update
 
 ## Runing the app
 To trun the app, simply do:
