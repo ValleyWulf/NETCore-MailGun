@@ -1,39 +1,56 @@
-# Welcome to ASP.NET Core
+# Sample Code for Mailgun on ASP.NET Core
 
-We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
+This is a sample code for use in conjunction with my tutorial blog, [Using Mailgun in ASP.NET Core on Linux Mint 17](http://www.cat-in-the-box.com/MadHatterHouse/vale/2016/using-mailgun-in-asp-net-core-on-linux-mint-17/).
 
-You've created a new ASP.NET Core project. [Learn what's new](https://go.microsoft.com/fwlink/?LinkId=518016)
+## Building
+Install the latest [.NET Core](https://www.microsoft.com/net/core).
 
-## This application consists of:
+Clone directory:
 
-*   Sample pages using ASP.NET Core MVC
-*   [Bower](https://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
-*   Theming using [Bootstrap](https://go.microsoft.com/fwlink/?LinkID=398939)
+	> git clone https://github.com/ValleyWulf/NETCore-MailGun.git
+	> cd NETCore-MailGun
+	> dotnet restore
 
-## How to
+## Set Up
+Before running the code, you would need to supply it with a valid configuration.
 
-*   [Add a Controller and View](https://go.microsoft.com/fwlink/?LinkID=398600)
-*   [Add an appsetting in config and access it in app.](https://go.microsoft.com/fwlink/?LinkID=699562)
-*   [Manage User Secrets using Secret Manager.](https://go.microsoft.com/fwlink/?LinkId=699315)
-*   [Use logging to log a message.](https://go.microsoft.com/fwlink/?LinkId=699316)
-*   [Add packages using NuGet.](https://go.microsoft.com/fwlink/?LinkId=699317)
-*   [Add client packages using Bower.](https://go.microsoft.com/fwlink/?LinkId=699318)
-*   [Target development, staging or production environment.](https://go.microsoft.com/fwlink/?LinkId=699319)
+To do so, create a directory called `Config`:
 
-## Overview
+	> mkdir Config
 
-*   [Conceptual overview of what is ASP.NET Core](https://go.microsoft.com/fwlink/?LinkId=518008)
-*   [Fundamentals of ASP.NET Core such as Startup and middleware.](https://go.microsoft.com/fwlink/?LinkId=699320)
-*   [Working with Data](https://go.microsoft.com/fwlink/?LinkId=398602)
-*   [Security](https://go.microsoft.com/fwlink/?LinkId=398603)
-*   [Client side development](https://go.microsoft.com/fwlink/?LinkID=699321)
-*   [Develop on different platforms](https://go.microsoft.com/fwlink/?LinkID=699322)
-*   [Read more on the documentation site](https://go.microsoft.com/fwlink/?LinkID=699323)
+And create a file called `MailGunEmailSettings.json` under the `Config` directory.
 
-## Run & Deploy
+The `MailGunEmailSettings.json` would contain the settings for Mailgun configuration:
 
-*   [Run your app](https://go.microsoft.com/fwlink/?LinkID=517851)
-*   [Run tools such as EF migrations and more](https://go.microsoft.com/fwlink/?LinkID=517853)
-*   [Publish to Microsoft Azure Web Apps](https://go.microsoft.com/fwlink/?LinkID=398609)
+`{
 
-We would love to hear your [feedback](https://go.microsoft.com/fwlink/?LinkId=518015)
+ "SMTPSettings": 
+ {
+   "SmtpHost": "smtp.mailgun.org",
+   "SmtpPort": "587",
+   "SmtpLogin": "<Mailgun's Default SMTP Login>",
+   "SmtpPassword": "<Mailgun's Default Password>",
+   "SenderName": "<Sender Name>",
+   "From": "<someone@somewhere.com>"
+ },
+
+ "RestAPISettings": 
+ {
+   "ApiKey": "<Mailgun's API Key>",
+   "BaseUri": "<Mailgun's API Base URI>",
+   "RequestUri": "messages",
+   "From": "<Non-Reply <someone@somewhere.com>>"
+ }
+
+}`
+
+## Runing the app
+To trun the app, simply do:
+
+	> dotnet run
+
+And bring up a browser and go to URL `localhost:5000` or whatever default URL your web application is set up to run on.
+
+## License
+This sample code is licensed under the [MIT License](https://github.com/ValleyWulf/NETCore-MailGun/blob/master/License.txt).
+
