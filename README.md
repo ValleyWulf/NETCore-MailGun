@@ -43,6 +43,16 @@ The `MailGunEmailSettings.json` would contain the settings for Mailgun configura
  	  }
 
 	}
+	
+By default, the web application uses the configuration for api.  You can change this in `appsettings.json`, under the `EmailProvider` section:
+
+	"EmailProvider": {
+	    "Provider": "MailGun",
+	    "Description": "Mail service that sends out registration confirmation and account recovery emails.",
+	    "ConfigFile": "Config/MailGunEmailSettings.json",
+	    "ConnectionType": "api"
+	},
+
 
 ## Runing the app
 To trun the app, simply do:
