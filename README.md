@@ -22,27 +22,27 @@ And create a file called `MailGunEmailSettings.json` under the `Config` director
 
 The `MailGunEmailSettings.json` would contain the settings for Mailgun configuration:
 
-`{
+	{
 
- "SMTPSettings": 
- {
-   "SmtpHost": "smtp.mailgun.org",
-   "SmtpPort": "587",
-   "SmtpLogin": "<Mailgun's Default SMTP Login>",
-   "SmtpPassword": "<Mailgun's Default Password>",
-   "SenderName": "<Sender Name>",
-   "From": "<someone@somewhere.com>"
- },
+ 	  "SMTPSettings": 
+ 	  {
+   	    "SmtpHost": "smtp.mailgun.org",
+   	    "SmtpPort": "587",
+   	    "SmtpLogin": "<Mailgun's Default SMTP Login>",
+   	    "SmtpPassword": "<Mailgun's Default Password>",
+   	    "SenderName": "<Sender Name>",
+   	    "From": "<someone@somewhere.com>"
+ 	  },
 
- "RestAPISettings": 
- {
-   "ApiKey": "<Mailgun's API Key>",
-   "BaseUri": "<Mailgun's API Base URI>",
-   "RequestUri": "messages",
-   "From": "<Non-Reply <someone@somewhere.com>>"
- }
+ 	  "RestAPISettings": 
+ 	  {
+   	    "ApiKey": "<Mailgun's API Key>",
+   	    "BaseUri": "<Mailgun's API Base URI>",
+    	    "RequestUri": "messages",
+   	    "From": "<Non-Reply <someone@somewhere.com>>"
+ 	  }
 
-}`
+	}
 
 ## Runing the app
 To trun the app, simply do:
